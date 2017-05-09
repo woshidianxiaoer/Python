@@ -1,0 +1,19 @@
+a=input("Please:")#输入
+s=list(a)#分解为一个列表
+q=len(s)
+w=[]#建立空列表
+for o in range(q):#开始遍历列表，按照替换规则进行替换
+    g=s[o]
+    p=ord(g)
+    if (p>=65 and p<=77)or(p>=97 and p<=109):
+        p+=13
+        s[o]=chr(p)
+        p-=13
+        w.append(s[o])
+    elif (p>=78 and p<=90)or(p>=110 and p<=122):
+        p-=13
+        s[o]=chr(p)
+        w.append(s[o])
+    else:
+        w.append(s[o])
+print(''.join(w))#合并列表并输出结果
